@@ -1,5 +1,4 @@
-theme: jekyll-theme-minimal
-name: CodeSTack Library
+name: CodeStack Library
 markdown: redcarpet
 pygments: true
-baseurl: /index.html
+baseurl: /site
