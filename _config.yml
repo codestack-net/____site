@@ -4,5 +4,11 @@ markdown: kramdown
 pygments: true
 baseurl: /site
 
+tipue_search:
+  include:
+    pages: true
+  exclude:
+    files: [search.html]
+    
 plugins:
   - jekyll-redirect-from
