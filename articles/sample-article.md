@@ -7,4 +7,7 @@ redirect_from:
   - /old-sample-article.html
 ---
 
-#Sample article
+# Sample article
+* One
+* Two
+* Three
