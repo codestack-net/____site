@@ -1,4 +1,4 @@
 name: CodeStack Library
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 baseurl: /site
