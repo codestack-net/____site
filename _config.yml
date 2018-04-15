@@ -2,3 +2,6 @@ name: CodeStack Library
 markdown: kramdown
 pygments: true
 baseurl: /site
+
+plugins:
+  - jekyll-redirect-from
