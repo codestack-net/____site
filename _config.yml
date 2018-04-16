@@ -1,4 +1,4 @@
-theme: jekyll-theme-minimal
+theme: minima
 name: CodeStack Library
 markdown: kramdown
 baseurl: /site
