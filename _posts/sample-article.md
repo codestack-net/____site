@@ -12,5 +12,5 @@ redirect_from:
 * Two
 * Three
 *Four
-**Four-1
-**Four-2
+*Four-1
+*Four-2

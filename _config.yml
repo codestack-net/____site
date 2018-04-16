@@ -1,7 +1,6 @@
 theme: jekyll-theme-minimal
 name: CodeStack Library
 markdown: kramdown
-pygments: true
 baseurl: /site
 
 tipue_search:
