@@ -1,7 +1,14 @@
+title: Code Stack
+description: >-
+  One stop shop for SOLIDWORKS API, Desktop, Web and Mobile 
+  software development code examples and tips & tricks
+email: codestack.net@gmail.com
 theme: minima
 name: CodeStack Library
 markdown: kramdown
 baseurl: /site
+url: https://www.codestack.net
+permalink: /:title
 
 tipue_search:
   include:
@@ -11,3 +18,6 @@ tipue_search:
     
 plugins:
   - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

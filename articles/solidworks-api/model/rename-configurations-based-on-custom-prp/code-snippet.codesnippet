@@ -1,0 +1,46 @@
+<pre><span class="kwd">Dim</span><span class="pln"> swApp </span><span class="kwd">As</span><span class="pln"> SldWorks</span><span class="pun">.</span><span class="pln">SldWorks
+</span><span class="kwd">Dim</span><span class="pln"> swModel </span><span class="kwd">As</span><span class="pln"> SldWorks</span><span class="pun">.</span><span class="pln">ModelDoc2
+
+</span><span class="kwd">Sub</span><span class="pln"> main</span><span class="pun">()</span><span class="pln">
+
+    </span><span class="kwd">Set</span><span class="pln"> swApp </span><span class="pun">=</span><span class="pln"> Application</span><span class="pun">.</span><span class="pln">SldWorks
+    
+    </span><span class="kwd">Set</span><span class="pln"> swModel </span><span class="pun">=</span><span class="pln"> swApp</span><span class="pun">.</span><span class="pln">ActiveDoc
+    
+    </span><span class="kwd">If</span><span class="pln"> </span><span class="kwd">Not</span><span class="pln"> swModel </span><span class="kwd">Is</span><span class="pln"> </span><span class="lit">Nothing</span><span class="pln"> </span><span class="kwd">Then</span><span class="pln">
+        
+        </span><span class="kwd">Dim</span><span class="pln"> prpName </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+        
+        prpName </span><span class="pun">=</span><span class="pln"> InputBox</span><span class="pun">(</span><span class="str">"Specify the property name to read the value from"</span><span class="pun">)</span><span class="pln">
+        
+        </span><span class="kwd">If</span><span class="pln"> prpName </span><span class="pun">&lt;&gt;</span><span class="pln"> </span><span class="str">""</span><span class="pln"> </span><span class="kwd">Then</span><span class="pln">
+            
+            </span><span class="kwd">Dim</span><span class="pln"> vConfNames </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Variant</span><span class="pln">
+            </span><span class="kwd">Dim</span><span class="pln"> i </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">Integer</span><span class="pln">
+            
+            vConfNames </span><span class="pun">=</span><span class="pln"> swModel</span><span class="pun">.</span><span class="pln">GetConfigurationNames</span><span class="pun">()</span><span class="pln">
+            
+            </span><span class="kwd">For</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="kwd">To</span><span class="pln"> UBound</span><span class="pun">(</span><span class="pln">vConfNames</span><span class="pun">)</span><span class="pln">
+                    
+                </span><span class="kwd">Dim</span><span class="pln"> swConf </span><span class="kwd">As</span><span class="pln"> SldWorks</span><span class="pun">.</span><span class="pln">Configuration
+                </span><span class="kwd">Set</span><span class="pln"> swConf </span><span class="pun">=</span><span class="pln"> swModel</span><span class="pun">.</span><span class="pln">GetConfigurationByName</span><span class="pun">(</span><span class="pln">vConfNames</span><span class="pun">(</span><span class="pln">i</span><span class="pun">))</span><span class="pln">
+                
+                </span><span class="kwd">Dim</span><span class="pln"> prpVal </span><span class="kwd">As</span><span class="pln"> </span><span class="kwd">String</span><span class="pln">
+                
+                </span><span class="kwd">If</span><span class="pln"> swConf</span><span class="pun">.</span><span class="pln">CustomPropertyManager</span><span class="pun">.</span><span class="pln">Get3</span><span class="pun">(</span><span class="pln">prpName</span><span class="pun">,</span><span class="pln"> </span><span class="lit">False</span><span class="pun">,</span><span class="pln"> </span><span class="str">""</span><span class="pun">,</span><span class="pln"> prpVal</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">Then</span><span class="pln">
+                    
+                    </span><span class="kwd">If</span><span class="pln"> prpVal </span><span class="pun">&lt;&gt;</span><span class="pln"> </span><span class="str">""</span><span class="pln"> </span><span class="kwd">Then</span><span class="pln">
+                        swConf</span><span class="pun">.</span><span class="pln">Name </span><span class="pun">=</span><span class="pln"> prpVal
+                    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+                    
+                </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+                
+            </span><span class="kwd">Next</span><span class="pln">
+            
+        </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+        
+    </span><span class="kwd">Else</span><span class="pln">
+        MsgBox </span><span class="str">"Please open the model"</span><span class="pln">
+    </span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">If</span><span class="pln">
+    
+</span><span class="kwd">End</span><span class="pln"> </span><span class="kwd">Sub</span></pre>
