@@ -1,5 +1,6 @@
 ---
 layout: article
+toc: solidworks-api
 title: Rename Configurations Based On Custom Property
 description: Renames all configurations
 image: sw-configuration-name.png

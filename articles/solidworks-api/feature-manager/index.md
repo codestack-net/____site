@@ -1,5 +1,6 @@
 ---
 layout: article
+toc: solidworks-api
 title: Feature Manager
 description: Something about feature manager
 ---

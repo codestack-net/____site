@@ -1,15 +1,11 @@
-{% include head.html %}
+---
+layout: master
+---
+
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.css">
-	<main>
 
-    	<h1>Article-{{ page.title }}</h1>
+{% if page.toc %}
+{% include toc/{{ page.toc }}.html %}
+{% endif %}
 
-    	{{ content }}
-
-    	<p>Article <a href="{{ page.article-attribution-link }}">{{ page.article-attribution }}</a>.</p>
-
-	</main>
-	
-	{% include nav.html %}
-
-{% include foot.html %}
+{{ content }}
