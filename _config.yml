@@ -9,7 +9,7 @@ markdown: kramdown
 baseurl: /site
 url: https://www.codestack.net
 permalink: /:title
-    
+
 tipue_search:
   include:
     pages: true

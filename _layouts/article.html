@@ -2,10 +2,13 @@
 layout: master
 ---
 
+{% assign page_groups = page.url | split:'/' %}
+{% capture route_group_name %}/{{ page_groups[1] }}/{% endcapture %}
+
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.css">
 
-{% if page.toc %}
-{% include toc/{{ page.toc }}.html %}
-{% endif %}
-
+<div>
+<div>{% include navigation.html context=route_group_name %}</div>
 {{ content }}
+
+<div>
