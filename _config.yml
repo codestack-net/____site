@@ -4,10 +4,9 @@ description: >-
   software development code examples and tips & tricks
 email: codestack.net@gmail.com
 theme: minima
-name: CodeStack Library
+name: CodeStack
 markdown: kramdown
 baseurl: /site
-url: https://www.codestack.net
 permalink: /:title
 
 tipue_search:
