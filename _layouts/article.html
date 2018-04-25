@@ -6,9 +6,58 @@ layout: master
 {% capture route_group_name %}/{{ page_groups[1] }}/{% endcapture %}
 
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.css">
+<style>
+	* {
+		box-sizing: border-box;
+	}
 
-<div>
-<div>{% include navigation.html context=route_group_name %}</div>
-{{ content }}
+	.toc {
+		float: left;
+		width: 30%;
+		padding: 10px;
+	}
 
-<div>
+	.content {
+		float: left;
+		width: 70%;
+		padding: 10px;
+	}
+
+	.layout:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	@media screen and (max-width: 600px) {
+		.toc {
+			width: 100%;
+		}
+		.content {
+			width: 100%;
+		}    
+	}
+	</style>
+	<script>
+	window.onload = function() {
+		updateLayout();
+	};
+	function updateLayout() {
+	if(window.innerWidth < 600){
+		document.getElementById("tocExpander").removeAttribute("open");
+		}
+	}
+	</script>
+	
+<div class="layout">
+  <div class="toc">
+  <details id="tocExpander" open>
+  <summary>
+  Table Of Content
+  </summary>
+{% include navigation.html context=route_group_name %}
+  </div>
+  <div class="content">
+    {{ content }}
+  </div>
+</div>
