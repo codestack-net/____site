@@ -5,6 +5,9 @@
     <hr>
     <main class="page-content" aria-label="Content" style="min-height: 300px">
         <div class="wrapper">
+			<form style="text-align: left;" action="{{ 'search' | absolute_url }}">
+				<input type="text" placeholder="Search" name="q" id="tipue_search_input">
+			</form>
             {{ content }}
         </div>
     </main>
