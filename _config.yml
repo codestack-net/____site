@@ -9,6 +9,10 @@ markdown: kramdown
 baseurl: /site
 permalink: /:title
 
+header_pages:
+  - solidworks-api/index.md
+  - solidworks-pdm-api/index.md
+  
 tipue_search:
   include:
     pages: true

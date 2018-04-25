@@ -1,6 +1,6 @@
 ---
 layout: article
-title: All about SOLIDWORKS PDM API
+title: SOLIDWORKS PDM API
 ---
 
 All about SOLIDWORKS PDM API

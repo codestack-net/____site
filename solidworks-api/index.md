@@ -1,6 +1,6 @@
 ---
 layout: article
-title: All about SOLIDWORKS API
+title: SOLIDWORKS API
 ---
 
 All about SOLIDWORKS API
