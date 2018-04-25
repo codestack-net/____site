@@ -1,16 +1,52 @@
 {% include head.html %}
 
+<style>
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	background-color: wheat;
+}
+
+.menuItem {
+    float: left;
+	vertical-align: middle;
+}
+
+.menuItem a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menuItem a:hover:not(.activeMenu) {
+    background-color: gray;
+}
+
+.activeMenu {
+    background-color: blue;
+}
+</style>
 	
 <body>
-    <h1>{{ page.title }}</h1>
-
-	<form action="{{ "search" | absolute_url }}">
-		<div class="tipue_search_left"><img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" class="tipue_search_icon"></div>
-		<div class="tipue_search_right"><input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required></div>
-		<div style="clear: both;"></div>
-	</form>
+	<ul class="menu">
+	  <div>
+	  <li class="menuItem"><a href="{{ '/' | relative_url}}"><img src="{{ '/images//cs_banner_micro.png' | relative_url }}"></a></li>
+	  <li class="menuItem"><a href="{{ '/solidworks-api' | relative_url}}" class="activeMenu">SOLIDWORKS API</a></li>
+	  <li class="menuItem"><a href="{{ '/solidworks-pdm-api' | relative_url}}">SOLIDWORKS PDM API</a></li>
+	  </div>
+	  <li class="menuItem" style="float:right">
+	  <form action="{{ 'search' | absolute_url }}" >
+		  <input type="text" placeholder="Search" name="q" id="tipue_search_input">
+		</form>
+	  </li>
+	</ul>
+	<hr>
 	
-	<main class="page-content" aria-label="Content">
+	<main class="page-content" aria-label="Content" style="min-height: 300px">
       <div class="wrapper">
         {{ content }}
       </div>
