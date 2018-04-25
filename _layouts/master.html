@@ -1,12 +1,12 @@
 {% include head.html %}
 
+<!--
 <style>
     .menu {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: wheat;
     }
 
     .menuItem {
@@ -23,11 +23,11 @@
         }
 
             .menuItem a:hover:not(.activeMenu) {
-                background-color: gray;
+                color: gray;
             }
 
     .activeMenu {
-        background-color: blue;
+		font-weight: bold
     }
 
     @media screen and (max-width: 600px) {
@@ -47,19 +47,42 @@
         }
         }
       
-</style>
-
+</style>-->
 <body>
-    <table style="width:100%; background:wheat">
+    <header class="site-header" role="banner">
+
+        <div class="wrapper">
+
+            <a class="site-title" href="{{ "/" | relative_url}}"><img alt='{{ site.title | escape }}' src="{{ '/images//cs_banner_micro.png' | relative_url }}"></a>
+
+            <nav class="site-nav">
+                <span class="menu-icon" onclick="void(0)">
+                    <img src="{{ '/images//mobile-menu.png' | relative_url }}">
+                </span>
+
+                <div class="trigger" onclick="void(0)">
+                    <a href="{{ '/solidworks-api' | relative_url}}">SW API</a>
+                    <a href="{{ '/solidworks-pdm-api' | relative_url}}">SW PDM API</a>
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+    <!--
+    <table style="width:100%; border: none">
         <tr>
-            <th width="auto">
-                <a href="{{ '/' | relative_url}}"><img src="{{ '/images//cs_banner_micro.png' | relative_url }}"></a>
+            <th width="50">
+                <a href="{{ '/' | relative_url}}"><img height="32" src="{{ '/images//cs_banner_micro.png' | relative_url }}"></a>
             </th>
             <th width="100%">
-                <ul class="menu">
-                    <li class="menuItem"><a href="{{ '/solidworks-api' | relative_url}}" class="activeMenu">SOLIDWORKS API</a></li>
-                    <li class="menuItem"><a href="{{ '/solidworks-pdm-api' | relative_url}}">SOLIDWORKS PDM API</a></li>
-                </ul>
+                <nav class="nav-primary" role="navigation">
+                    <ul>
+                        <li><a href="{{ '/solidworks-api' | relative_url}}">SOLIDWORKS API</a></li>
+                        <li><a href="{{ '/solidworks-pdm-api' | relative_url}}">SOLIDWORKS PDM API</a></li>
+                    </ul>
+                </nav>
             </th>
             <th width="auto">
                 <form action="{{ 'search' | absolute_url }}">
@@ -70,7 +93,7 @@
                 <img src="{{ '/images//mobile-menu.png' | relative_url }}">
             </th>
         </tr>
-    </table>
+    </table>-->
     <hr>
     <main class="page-content" aria-label="Content" style="min-height: 300px">
         <div class="wrapper">
