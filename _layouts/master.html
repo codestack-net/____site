@@ -1,55 +1,82 @@
 {% include head.html %}
 
 <style>
-.menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-	background-color: wheat;
-}
+    .menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: wheat;
+    }
 
-.menuItem {
-    float: left;
-	vertical-align: middle;
-}
+    .menuItem {
+        float: left;
+        vertical-align: middle;
+    }
 
-.menuItem a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+        .menuItem a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-.menuItem a:hover:not(.activeMenu) {
-    background-color: gray;
-}
+            .menuItem a:hover:not(.activeMenu) {
+                background-color: gray;
+            }
 
-.activeMenu {
-    background-color: blue;
-}
+    .activeMenu {
+        background-color: blue;
+    }
+
+    @media screen and (max-width: 600px) {
+        .menu {
+            display: none;
+        }
+
+        .mobileMenu {
+            display: normal;
+        }
+    }
+
+    @media screen and (min-width: 601px) {
+
+        .mobileMenu {
+            display: none;
+        }
+        }
+      
 </style>
-	
+
 <body>
-	<ul class="menu">
-	  <div>
-	  <li class="menuItem"><a href="{{ '/' | relative_url}}"><img src="{{ '/images//cs_banner_micro.png' | relative_url }}"></a></li>
-	  <li class="menuItem"><a href="{{ '/solidworks-api' | relative_url}}" class="activeMenu">SOLIDWORKS API</a></li>
-	  <li class="menuItem"><a href="{{ '/solidworks-pdm-api' | relative_url}}">SOLIDWORKS PDM API</a></li>
-	  </div>
-	  <li class="menuItem" style="float:right">
-	  <form action="{{ 'search' | absolute_url }}" >
-		  <input type="text" placeholder="Search" name="q" id="tipue_search_input">
-		</form>
-	  </li>
-	</ul>
-	<hr>
-	
-	<main class="page-content" aria-label="Content" style="min-height: 300px">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+    <table style="width:100%; background:wheat">
+        <tr>
+            <th width="auto">
+                <a href="{{ '/' | relative_url}}"><img src="{{ '/images//cs_banner_micro.png' | relative_url }}"></a>
+            </th>
+            <th width="100%">
+                <ul class="menu">
+                    <li class="menuItem"><a href="{{ '/solidworks-api' | relative_url}}" class="activeMenu">SOLIDWORKS API</a></li>
+                    <li class="menuItem"><a href="{{ '/solidworks-pdm-api' | relative_url}}">SOLIDWORKS PDM API</a></li>
+                </ul>
+            </th>
+            <th width="auto">
+                <form action="{{ 'search' | absolute_url }}">
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input">
+                </form>
+            </th>
+            <th width="auto" class="mobileMenu">
+                <img src="{{ '/images//mobile-menu.png' | relative_url }}">
+            </th>
+        </tr>
+    </table>
+    <hr>
+    <main class="page-content" aria-label="Content" style="min-height: 300px">
+        <div class="wrapper">
+            {{ content }}
+        </div>
     </main>
-</body>	
+</body>
+
 {% include foot.html %}
