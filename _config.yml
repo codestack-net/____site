@@ -10,6 +10,9 @@ baseurl: /site
 permalink: /:title
 
 header_pages:
+  - solidworks-api/index.md
+  - solidworks-pdm-api/index.md
+  - solidworks-document-manager-api/index.md
   - web-development/index.md
   - web-services/index.md
   
