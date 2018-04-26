@@ -2,6 +2,7 @@
     .dropdown {
         position: relative;
         display: inline-block;
+        cursor: pointer;
     }
 
     .dropdown-content {
@@ -48,15 +49,17 @@
                 </span>
             </label>
             <div class="trigger">
-                <div class="page-link dropdown">
-                    <span>SOLIDWORKS &#9662;</span>
-                    <div class="dropdown-content">
-                        <a class="page-link" href="{{ '/solidworks-api' | relative_url }}">SOLIDWORKS API</a>
-                        <a class="page-link" href="{{ '/solidworks-pdm-api' | relative_url }}">SOLIDWORKS PDM API</a>
-                        <a class="page-link" href="{{ '/solidworks-document-manager-api' | relative_url }}">SOLIDWORKS Document Manager API</a>
-                    </div>
-                </div>
-                
+                <span class="page-link">
+                    <span>SOLIDWORKS</span>
+                    <span class="dropdown">
+                        <span>&#9660;</span>
+                        <span class="dropdown-content">
+                                <a class="page-link" href="{{ '/solidworks-api' | relative_url }}">SOLIDWORKS API</a>
+                                <a class="page-link" href="{{ '/solidworks-pdm-api' | relative_url }}">SOLIDWORKS PDM API</a>
+                                <a class="page-link" href="{{ '/solidworks-document-manager-api' | relative_url }}">SOLIDWORKS Document Manager API</a>
+                        </span>
+                    </span>
+                </span>
                 {%- for path in page_paths -%}
                 {%- assign my_page = site.pages | where: "path", path | first -%}
                 {%- if my_page.title -%}
