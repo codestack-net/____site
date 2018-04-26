@@ -49,21 +49,18 @@
                 </span>
             </label>
             <div class="trigger">
-                <span class="page-link">
-                    <span>SOLIDWORKS</span>
-                    <span class="dropdown">
-                        <span>&#9660;</span>
-                        <span class="dropdown-content">
-                                <a class="page-link" href="{{ '/solidworks-api' | relative_url }}">SOLIDWORKS API</a>
-                                <a class="page-link" href="{{ '/solidworks-pdm-api' | relative_url }}">SOLIDWORKS PDM API</a>
-                                <a class="page-link" href="{{ '/solidworks-document-manager-api' | relative_url }}">SOLIDWORKS Document Manager API</a>
-                        </span>
+                <div class="page-link dropdown">
+                    <span>SOLIDWORKS &#9662;</span>
+                    <span class="dropdown-content">
+                        <a class="page-link" href="{{ '/solidworks-api' | relative_url }}">SOLIDWORKS API</a>
+                        <a class="page-link" href="{{ '/solidworks-pdm-api' | relative_url }}">SOLIDWORKS PDM API</a>
+                        <a class="page-link" href="{{ '/solidworks-document-manager-api' | relative_url }}">SOLIDWORKS Document Manager API</a>
                     </span>
-                </span>
+                </div>
                 {%- for path in page_paths -%}
                 {%- assign my_page = site.pages | where: "path", path | first -%}
                 {%- if my_page.title -%}
-                <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape | upcase }}</a>
                 {%- endif -%}
                 {%- endfor -%}
                                
