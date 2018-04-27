@@ -1,7 +1,8 @@
 ---
 layout: article
 title: SOLIDWORKS PDM API
-menuGroup: SOLIDWORKS
+menu: SOLIDWORKS
+order: 2
 ---
 
 All about SOLIDWORKS PDM API

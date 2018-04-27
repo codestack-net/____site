@@ -1,7 +1,8 @@
 ---
 layout: article
 title: SOLIDWORKS Document Manager API
-menuGroup: SOLIDWORKS
+menu: SOLIDWORKS
+order: 3
 ---
 
 All about SOLIDWORKS Document Manager API

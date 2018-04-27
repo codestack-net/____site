@@ -1,7 +1,8 @@
 ---
 layout: article
 title: SOLIDWORKS API
-menuGroup: SOLIDWORKS
+menu: SOLIDWORKS
+order: 1
 ---
 
 All about SOLIDWORKS API
